@@ -44,3 +44,7 @@ table_name = "crimes_"+ name
 spark.sql(f"create database if not exists {database}")
 spark.sql(f"drop table if exists bronze.{table_name} ")
 spark.sql(f"create table bronze.{table_name} using delta location '{path_bronze}'")
+
+# COMMAND ----------
+
+select * from bronze.crimes_victoria
